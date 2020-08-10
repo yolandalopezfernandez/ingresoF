@@ -63,7 +63,7 @@ function mostrar()
 
     }
 
-    console.log(`Cantidad de feminos es ${contadorFemenino},
+    console.log(`Cantidad de feminos es: ${contadorFemenino},
 	\nla edad promedio en total es: ${acumuladorEdad / 5 },
-	\ny el hombre más pesado es  ${hombreMasPesado}`);
+	\ny el hombre más pesado es: ${hombreMasPesado}`);
 }
