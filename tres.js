@@ -24,6 +24,8 @@ function mostrar()
 	let contadorCata = 0;
 	let contadorSalta = 0;
 	let flagMasPasajeros = 0;
+	let contadorInvierno = 0;
+	let acumuladorPersonasInv = 0;
 
 	do{
 		sexoTit = prompt("Ingrese sexo del titular: ");
@@ -58,17 +60,20 @@ function mostrar()
 
 		if(flagMasPasajeros == 0){
 			flagMasPasajeros = 1;
-			sexoMasPasajero = sexo;
-			masPasajeros = cantidad;
+			sexoMasPasajero = sexoTit;
+			masPasajeros = cantidadPers;
 		}
 		else{
-			if(cantidad > masPasajeros){
-				sexoMasPasajero = sexo;
-				masPasajeros = cantidad;
+			if(cantidadPers > masPasajeros){
+				sexoMasPasajero = sexoTit;
+				masPasajeros = cantidadPers;
 			}
 		}
 
-
+		if(temporada == "invierno"){
+			contadorInvierno++;
+			acumuladorPersonasInv+= cantidadPers;
+		}
 
 
 		continuar = prompt("Desea Ingresar otro producto?");
@@ -86,5 +91,6 @@ function mostrar()
 	}
 
 	console.log(`El lugar más elegido es: ${lugarMasElegido},
-	\ny el sexo del titular que lleva más pasajeros es: ${sexoMasPasajero}`);
+	\ny el sexo del titular que lleva más pasajeros es: ${sexoMasPasajero},
+	\ny el promedio de personas que viajan en invierno es: ${acumuladorPersonasInv / contadorInvierno}`);
 }
